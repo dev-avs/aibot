@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, Events } = require("discord.js");
+const { Client, GatewayIntentBits, Events, ActivityType } = require("discord.js");
 
 // --- Config ---
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
@@ -135,7 +136,14 @@ const client = new Client({
 
 client.once(Events.ClientReady, () => {
   console.log(`Logged in as ${client.user.tag}`);
+  
+  client.user.setPresence({
+    activities: [{ name: "thinking about cats", type: ActivityType.Custom, emoji: { name: "cat~1", id: "1475684132225810493" }]
+    status: "online",
+  });
 });
+
+
 
 client.on(Events.MessageCreate, async (message) => {
   if (message.author.bot) return;
