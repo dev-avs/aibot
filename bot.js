@@ -137,7 +137,7 @@ client.once(Events.ClientReady, () => {
   console.log(`Logged in as ${client.user.tag}`);
   
   client.user.setPresence({
-    activities: [{ name: "thinking about cats", type: ActivityType.Custom, emoji: { name: "🐱" }}]
+    activities: [{ name: "thinking about cats", type: ActivityType.Custom, emoji: { name: "🐱" }}],
     status: "online",
   });
 });
